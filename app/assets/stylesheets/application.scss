@@ -18,3 +18,15 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "tipsy";
+
+
+.purr {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    width: 250px;
+    padding: 20px;
+    background-color: #fcc;
+    border: solid 2px #fcc;
+    &:first-letter { text-transform: uppercase;}
+  }

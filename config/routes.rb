@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'groups#index'
-  get 'randommmm' => 'groups#random', as: :tata 
+  get 'randommmm' => 'groups#random', as: :dunno
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

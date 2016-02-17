@@ -13,12 +13,14 @@
     </tr>
   </thead>
 
+
+
   <tbody>
     <% @groups.each do |group| %>
     <tr>
-      <td><%= group.name %></td>
-      <td><%= group.salle %></td>
-      <td><%= group.tache %></td>
+      <td><%= best_in_place group, :name %></td>
+      <td><%= best_in_place group, :salle %></td>
+      <td><%= best_in_place group, :tache %></td>
       <td></td>
       <td><%= link_to 'Show', group %></td>
       <td><%= link_to 'Edit', edit_group_path(group) %></td>
@@ -43,7 +45,7 @@
   <br>
 
   <%= link_to 'New Group', new_group_path %>
-<%= link_to 'Random' ,tata_path %>
+<%= link_to 'Random' ,dunno_path %>
 
   <br>
 
@@ -67,7 +69,7 @@
         <td><%= person.name %></td>
         <td><%= person.email %></td>
         <td><%= person.telephone %></td>
-        <td><%= person.group_id %></td>
+        <td><%= best_in_place person, :group_id , :as => :select, :collection => (Group.all.to_a.map {|x| [ x.name, x.id]}) %></td>
         <td><%= person.sensei? ? "Sensei" : "" %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
