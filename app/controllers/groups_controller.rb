@@ -1,15 +1,41 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
+def random
+  @people = Person.all
+  @groups = Group.all
+  alone_id=Person.all.to_a.map {|x| x.id}
+  #
+  if Group.all.count > 2
+    #
+      while alone_id.count > 0
+        #
+          Group.all.each do |gp|
+            #
+            a =alone_id.sample
+            #
+            alone_id.delete(a)
+            #
+            Person.find(a).update_attributes(group_id:  gp.id)   unless alone_id.count == 0
+            #
+          end
+        end
+      end
+redirect_to root_path notice:"Groups have been randomize"
+
+end
+
   # GET /groups
   # GET /groups.json
   def index
+    @people = Person.all
     @groups = Group.all
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+ @people = Person.all
   end
 
   # GET /groups/new

@@ -15,5 +15,19 @@
   <%= @group.tache %>
 </p>
 
+<p>
+  <strong>Membres:</strong>
+<% @group.people.each do |person| %>
+</p>
+
+<p>
+  <%= person.name %>
+  <%= person.sensei? ? " - Sensei" : "" %>
+</p>
+
+
+<% end %>
+
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
