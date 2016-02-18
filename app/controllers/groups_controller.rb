@@ -12,7 +12,7 @@ def random
         #
           Group.all.each do |gp|
             #
-            a =alone_id.sample
+            a = alone_id.sample
             #
             alone_id.delete(a)
             #
@@ -22,7 +22,6 @@ def random
         end
       end
 redirect_to root_path notice:"Groups have been randomize"
-
 end
 
   # GET /groups
