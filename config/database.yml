@@ -20,3 +20,6 @@ production:
  database: my_database_production
  pool: 5
  timeout: 5000
+ username: deploy
+ password: deploy
+ host: localhost

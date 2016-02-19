@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rvm', github: "capistrano/rvm"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem 'tipsy-rails'
