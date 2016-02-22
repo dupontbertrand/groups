@@ -6,7 +6,7 @@ def random
   @groups = Group.all
   alone_id=Person.all.to_a.map {|x| x.id}
   #
-  if Group.all.count > 2
+  if Group.all.count > 1
     #
       while alone_id.count > 0
         #
